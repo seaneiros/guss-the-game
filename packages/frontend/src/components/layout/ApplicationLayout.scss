@@ -1,0 +1,25 @@
+$block: 'application-layout';
+
+.#{$block} {
+  min-height: 100vh !important;
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    background: transparent !important;
+    border-left: 1px solid #eee;
+  }
+
+  &__logo-container {
+    display: flex;
+    justify-content: flex-start;
+    height: 56px;
+    padding: 0 20px;
+    margin: .5em 0 0;
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 20px 36px;
+  }
+}

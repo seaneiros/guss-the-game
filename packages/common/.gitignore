@@ -1,0 +1,9 @@
+/node_modules
+/coverage
+tsconfig.cjs.tsbuildinfo
+tsconfig.es.tsbuildinfo
+*.js
+*.js.map
+!*.test.js
+*.d.ts
+/lib

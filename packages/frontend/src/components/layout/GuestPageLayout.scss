@@ -1,0 +1,11 @@
+$block: 'guest-page-layout';
+
+.#{$block} {
+  height: 100vh;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

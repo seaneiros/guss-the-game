@@ -1,0 +1,19 @@
+{
+  "name": "@guss/root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build:be": "npx nx run @guss/backend:build",
+    "build:fe": "npx nx run @guss/frontend:build",
+    "prepare": "husky",
+    "tsc": "tsc"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lerna": "^6.6.2",
+    "typescript": "5.6.2"
+  }
+}

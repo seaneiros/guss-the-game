@@ -1,0 +1,35 @@
+version: '0.1'
+
+services:
+  guss-be-app:
+    container_name: guss-be
+
+    build:
+      dockerfile: ./packages/backend/Dockerfile
+    env_file: ./packages/backend/.env
+    ports:
+      - 9000:9000
+    links:
+      - db
+    depends_on:
+      - db
+  guss-fe-app:
+    container_name: guss-fe
+
+    build:
+      dockerfile: ./packages/frontend/Dockerfile
+    env_file: ./packages/frontend/.env
+    ports:
+      - 3000:3000
+    links:
+      - guss-be-app:be
+  db:
+    container_name: guss-db
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    env_file: ./packages/backend/.env
+    volumes:
+      - ./deploy/db/init.sh:/docker-entrypoint-initdb.d/init.sh
+    ports:
+      - 15432:5432
